@@ -1,0 +1,22 @@
+function W = regresionLogistica(X,Y,eta)
+
+[N,D]=size(X);
+W = zeros(D,1);
+W=W';
+for iter = 1:1000
+   
+    W=W-eta*(1/N)*((sigmoide(W*X'))'-Y)'*X;
+    %{
+	x=linspace(-11,11,500);
+	figure(1);
+	k=-W(1)/2;
+	h=-W(3)/2;
+	r2=-W(5)+h^2+k^2;
+	plot(x,-sqrt(r2-(x-h).^2)+k,'.g');
+	hold on;
+	plot(x,sqrt(r2-(x-h).^2)+k,'.g');
+	pause(0.0000001);
+    %}
+end
+
+end

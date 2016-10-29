@@ -1,0 +1,22 @@
+function error = miCriterio( Xtrain,Ytrain,Xtest,Ytest )
+%MICRITERIO Function wrapper
+%   
+    %[f,c]=size(Ytest);
+    
+    %Clasificador Cuadrático
+    %Yesti = classify(Xtest,Xtrain,Ytrain,'quadratic');
+    
+    %Clasificador Lineal
+    Yesti = classify(Xtest,Xtrain,Ytrain);
+    
+    %Ventana de Parzen
+    %h=0.05;%Best h for us
+    %Yesti = ventanaParzen(Xtest,Xtrain,Ytrain,h,'class');
+    %Yesti = Yesti.-1;
+    %Error
+    error=sum(Yesti~=Ytest);
+    %error
+    %size(Ytest)
+    %(error/f)*100
+end
+

@@ -1,0 +1,6 @@
+function probabilidad = testGMM(Modelo,Xtest)
+  
+    %probabilidad = gmmpost(Modelo, Xtest);
+    probabilidad = gmmprob(Modelo, Xtest);
+        
+end

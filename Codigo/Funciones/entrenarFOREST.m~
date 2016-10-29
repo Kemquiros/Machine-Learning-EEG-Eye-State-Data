@@ -1,0 +1,7 @@
+function Modelo = entrenarFOREST(NumArboles,X,Y)
+Modelo=  TreeBagger(NumArboles,X,Y);
+%Modelo= str2double( TreeBagger(NumArboles,X,Y));
+%Modelo=str2double(Modelo);
+
+
+end

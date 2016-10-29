@@ -1,0 +1,10 @@
+function modelo = entrenarGMM(X,NumeroMezclas,tipoMatriz)
+
+    %inputDim=size(X,2);      %%%%% Numero de caracteristicas de las muestras
+    mix = gmm(size(X,2), NumeroMezclas, tipoMatriz);
+    options = foptions;
+    options(14) = 10;%Iteraciones para el algoritmo K-means
+    mix = gmminit(mix, X, options);
+    modelo = gmmem(mix, X, options);
+
+end

@@ -1,0 +1,13 @@
+function model = entrenarSVM( X,Y, tipo, box, gamma,kernel)
+
+    if strcmp(kernel,'linear') == 1
+        model = trainlssvm({X,Y,tipo,box,[],'lin_kernel'});
+    else
+        model = trainlssvm({X,Y,tipo,box,gamma});
+    end
+   % model      = trainlssvm(model)
+    %[alpha, b] = trainlssvm({X,Y,tipo,box,gamma});
+% >> model      = trainlssvm(model)
+
+end
+

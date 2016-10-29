@@ -1,0 +1,6 @@
+function Yt = testSVM( model,Xt )
+
+    Yt = simlssvm(model, Xt);
+
+end
+
